@@ -5,7 +5,7 @@
 @section('content')
 
     {{-- ENCABEZADO --}}
-    <section class="bg-[#1e3a8a] py-16">
+    <section class="py-16"style="background: linear-gradient(135deg, #0a1f4d 0%, #17428C 50%, #0e2d6b 100%);">
         <div class="max-w-7xl mx-auto px-4">
             <h1 class="text-4xl font-bold text-white mb-2">Galería</h1>
             <p class="text-blue-300">Momentos y actividades de nuestra institución.</p>

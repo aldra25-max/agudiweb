@@ -13,25 +13,24 @@ class DirectorioForm
     {
         return $schema
             ->components([
+                TextInput::make('orden')
+                    ->numeric()
+                    ->default(0),
                 TextInput::make('empresa')
                     ->required()
                     ->maxLength(255),
-
                 TextInput::make('nombre')
                     ->required()
                     ->maxLength(255),
-
                 TextInput::make('cargo')
                     ->required()
                     ->maxLength(255),
-
                 FileUpload::make('foto')
                     ->image()
-                    ->disk('public')
+                    ->disk('public_html')
                     ->directory('directorio')
                     ->imagePreviewHeight('150')
                     ->nullable(),
-
                 Toggle::make('activo')
                     ->default(true),
             ]);

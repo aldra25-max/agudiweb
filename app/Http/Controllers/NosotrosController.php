@@ -14,8 +14,7 @@ class NosotrosController extends Controller
                            ->get();
 
         $directorio = Directorio::where('activo', true)
-                                ->orderBy('empresa')
-                                ->orderBy('nombre')
+                                ->orderBy('orden')
                                 ->get();
 
         return view('nosotros.index', compact('sponsors', 'directorio'));

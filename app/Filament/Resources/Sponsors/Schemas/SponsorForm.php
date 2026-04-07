@@ -19,7 +19,7 @@ class SponsorForm
 
                 FileUpload::make('logo')
                     ->image()
-                    ->disk('public')
+                    ->disk('public_html')
                     ->directory('sponsors')
                     ->imagePreviewHeight('150')
                     ->required(),

@@ -19,19 +19,31 @@ class SocioForm
             ->maxLength(255),
             FileUpload::make('logo')
             ->image()
-            ->disk('public')
+            ->disk('public_html')
             ->directory('socios')
             ->imagePreviewHeight('150')
             ->required(),
-            TextInput::make('telefono')->nullable(),
-            TextInput::make('direccion')->nullable(),
+            TextInput::make('telefono')
+            ->nullable(),
+            TextInput::make('email')
+                    ->email()
+                    ->unique(ignoreRecord: true)
+                    ->maxLength(255),
+            TextInput::make('direccion')
+            ->nullable(),
             TextInput::make('link')
             ->label('Página web')
             ->url()
             ->nullable(),
-            TextInput::make('facebook')->url()->nullable(),
-            TextInput::make('instagram')->url()->nullable(),
-            TextInput::make('linkedin')->url()->nullable(),
+            TextInput::make('facebook')
+            ->url()
+            ->nullable(),
+            TextInput::make('instagram')
+            ->url()
+            ->nullable(),
+            TextInput::make('linkedin')
+            ->url()
+            ->nullable(),
             Textarea::make('descripcion')
             ->rows(4)
             ->columnSpanFull(),

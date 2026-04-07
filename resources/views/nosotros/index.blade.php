@@ -5,10 +5,10 @@
 @section('content')
 
     {{-- HERO BANNER --}}
-    <section class="bg-gray-100 py-16">
+    <section class="py-16" style="background: linear-gradient(135deg, #0a1f4d 0%, #17428C 50%, #0e2d6b 100%);">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-4xl font-bold text-gray-800">Nosotros</h1>
-            <p class="text-gray-500 text-sm mt-2">Conoce quiénes somos, nuestra misión y nuestro equipo.</p>
+            <h1 class="text-4xl font-bold text-white">Nosotros</h1>
+            <p class="text-white text-sm mt-2">Conoce quiénes somos, nuestra misión y nuestro equipo.</p>
         </div>
     </section>
 
@@ -17,23 +17,17 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                <div class="bg-gray-50 rounded-2xl p-8">
-                    <h2 class="text-lg font-semibold text-gray-800 mb-3">Misión</h2>
-                    <p class="text-gray-500 text-sm leading-relaxed">
-                        {{-- ✏️ Reemplaza con tu texto --}}
-                        Somos una organización comprometida con el desarrollo y fortalecimiento
-                        del sector, promoviendo la integración, la competitividad y el bienestar
-                        de nuestros asociados a través de servicios de calidad.
+                <div class="bg-[#17428c] rounded-2xl p-8">
+                    <h2 class="text-xl font-bold text-white mb-3">Misión</h2>
+                    <p class="text-white text-sm leading-relaxed">
+                        Ejercer una representación firme y legítima de nuestros afiliados, defendiendo sus intereses y promoviendo el desarrollo sostenible de la industria gráfica peruana, a través de la capacitación continua, la integración gremial, la prestación de servicios de alto valor y el fortalecimiento de principios éticos y regulatorios que eleven los estándares del sector.
                     </p>
                 </div>
 
-                <div class="bg-gray-50 rounded-2xl p-8">
-                    <h2 class="text-lg font-semibold text-gray-800 mb-3">Visión</h2>
-                    <p class="text-gray-500 text-sm leading-relaxed">
-                        {{-- ✏️ Reemplaza con tu texto --}}
-                        Ser la institución gremial líder y referente, reconocida por su capacidad
-                        de representación, innovación y aporte al desarrollo sostenible del sector
-                        a nivel nacional e internacional.
+                <div class="bg-[#17428c] rounded-2xl p-8">
+                    <h2 class="text-xl font-bold text-white mb-3">Visión</h2>
+                    <p class="text-white text-sm leading-relaxed">
+                        Consolidarnos como un gremio líder y referente a nivel internacional, reconocido por impulsar la transformación, competitividad y excelencia de la industria gráfica peruana, posicionándola con estándares de clase mundial.
                     </p>
                 </div>
 
@@ -56,14 +50,14 @@
                 </div>
 
                 <div
-                    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 divide-x divide-y divide-gray-200 border border-gray-200">
+                    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 divide-x divide-y divide-gray-200 border border-gray-200">
                     @foreach ($sponsors as $sponsor)
                         <a href="{{ $sponsor->web ?: '#' }}" target="{{ $sponsor->web ? '_blank' : '_self' }}"
                             class="bg-gray-100 hover:bg-white transition-colors duration-200
-                      flex items-center justify-center p-8 min-h-36 group">
+                      flex items-center justify-center p-4 min-h-36 group">
                             @if ($sponsor->logo)
                                 <img src="{{ asset('storage/' . $sponsor->logo) }}" alt="{{ $sponsor->empresa }}"
-                                    class="max-h-12 max-w-32 w-auto object-contain
+                                    class="max-h-40 max-w-48 w-auto object-contain
                                 opacity-70 group-hover:opacity-100 transition-opacity duration-200">
                             @else
                                 <span class="text-sm text-gray-500 font-medium text-center">
@@ -87,7 +81,7 @@
                     Directorio
                 </h2>
 
-                <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6">
+                <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6">
                     @foreach ($directorio as $miembro)
                         <div class="flex flex-col items-start">
 

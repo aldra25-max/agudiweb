@@ -20,13 +20,13 @@
 <body class="bg-white text-gray-800 font-sans">
 
     {{-- NAVBAR --}}
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+<header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
 
-            {{-- Logo --}}
-            <a href="{{ url('/') }}">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-12 object-contain">
-            </a>
+        {{-- Logo --}}
+        <a href="{{ url('/') }}">
+            <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-20 w-auto object-contain">
+        </a>
 
             {{-- Navegación desktop --}}
             <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
@@ -43,7 +43,7 @@
                     </a>
                     <div x-show="open" @mouseenter="open = true" @mouseleave="open = false" x-transition
                         class="absolute left-0 mt-2 w-44 bg-white shadow-lg rounded-lg py-2 z-50">
-                        <a href="{{ url('/revista') }}" class="block px-4 py-2 hover:bg-gray-100">
+                        <a href="{{ url('/revistas') }}" class="block px-4 py-2 hover:bg-gray-100">
                             Revistas
                         </a>
                         <a href="{{ url('/noticias') }}" class="block px-4 py-2 hover:bg-gray-100">
@@ -79,7 +79,7 @@
 
             @guest('empresa')
                 <a href="{{ url('/asociacion') }}"
-                    class="hidden md:inline-block bg-black text-white text-sm font-semibold px-5 py-2 rounded-full hover:bg-gray-800 transition">
+                    class="hidden md:inline-block bg-[#e40c7e] text-white text-sm font-semibold px-5 py-2 rounded-full hover:bg-gray-800 transition">
                     Asóciate
                 </a>
             @endguest
@@ -107,11 +107,8 @@
                 <a href="{{ url('/') }}" class="hover:text-black">Inicio</a>
                 <a href="{{ url('/nosotros') }}" class="hover:text-black">Nosotros</a>
                 <a href="{{ url('/socios') }}" class="hover:text-black">Socios</a>
-                <a href="{{ url('/directorio') }}" class="hover:text-black">Directorio</a>
+                <a href="{{ url('/revistas') }}" class="hover:text-black">Revistas</a>
                 <a href="{{ url('/noticias') }}" class="hover:text-black">Noticias</a>
-                <a href="{{ url('/eventos') }}" class="hover:text-black">Eventos</a>
-                <a href="{{ url('/revista') }}" class="hover:text-black">Revista</a>
-                <a href="{{ url('/galeria') }}" class="hover:text-black">Galería</a>
                 @auth
                     @if (auth()->user()->tipo === 'empresa')
                         <a href="/exclusivo">Exclusivo</a>
@@ -128,42 +125,36 @@
     </main>
 
     {{-- FOOTER --}}
-    <footer class="bg-gray-900 text-white">
+    <footer class="text-white" style="background: linear-gradient(135deg, #0a1f4d 0%, #17428C 50%, #0e2d6b 100%);">
+        
         <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
-
-            {{-- Columna 1: Logo y descripción --}}
             <div>
                 <a href="{{ url('/') }}">
                     <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-10 mb-4 object-contain">
                 </a>
-                <p class="text-gray-400 text-sm leading-relaxed">
+                <p class="text-gray-200 text-sm leading-relaxed">
                     Congregamos a las empresas del sector y difundimos el valor de nuestra industria.
                 </p>
             </div>
 
-            {{-- Columna 2: Menú --}}
             <div>
-                <h4 class="text-sm font-semibold uppercase tracking-widest text-gray-300 mb-4">Menú</h4>
-                <ul class="space-y-2 text-sm text-gray-400">
+                <h4 class="text-sm font-semibold uppercase tracking-widest text-white mb-4">Menú</h4>
+                <ul class="space-y-2 text-sm text-gray-200">
                     <li><a href="{{ url('/nosotros') }}" class="hover:text-white transition">Nosotros</a></li>
                     <li><a href="{{ url('/socios') }}" class="hover:text-white transition">Socios</a></li>
-                    <li><a href="{{ url('/directorio') }}" class="hover:text-white transition">Directorio</a></li>
+                    <li><a href="{{ url('/revistas') }}" class="hover:text-white transition">Revistas</a></li>
                     <li><a href="{{ url('/noticias') }}" class="hover:text-white transition">Noticias</a></li>
-                    <li><a href="{{ url('/eventos') }}" class="hover:text-white transition">Eventos</a></li>
-                    <li><a href="{{ url('/revista') }}" class="hover:text-white transition">Revista</a></li>
-                    <li><a href="{{ url('/galeria') }}" class="hover:text-white transition">Galería</a></li>
                     <li><a href="{{ url('/login-empresas') }}" class="hover:text-white transition">Acceso Socios</a>
                     </li>
                 </ul>
             </div>
 
-            {{-- Columna 3: Suscripción newsletter --}}
             <div>
-                <h4 class="text-sm font-semibold uppercase tracking-widest text-gray-300 mb-4">Newsletter</h4>
-                <p class="text-sm text-gray-400 mb-4">Suscríbete para recibir las últimas noticias.</p>
+                <h4 class="text-sm font-semibold uppercase tracking-widest text-white mb-4">Newsletter</h4>
+                <p class="text-sm text-gray-200 mb-4">Suscríbete para recibir las últimas noticias.</p>
                 <div class="flex gap-2">
                     <input type="email" id="footer-email" placeholder="Tu correo"
-                        class="flex-1 px-3 py-2 rounded-lg bg-gray-800 text-white text-sm placeholder-gray-500 border border-gray-700 focus:outline-none focus:border-gray-400">
+                        class="flex-1 px-3 py-2 rounded-lg bg-gray-200 text-gray-900 text-sm placeholder-gray-500 border border-gray-700 focus:outline-none focus:border-gray-400">
                     <button onclick="suscribirFooter()"
                         class="bg-white text-gray-900 text-sm font-semibold px-4 py-2 rounded-lg hover:bg-gray-200 transition">
                         OK
@@ -171,7 +162,7 @@
                 </div>
                 <p id="footer-msg" class="mt-2 text-xs hidden"></p>
             </div>
-
+        </div>
             <script>
                 function suscribirFooter() {
                     const email = document.getElementById('footer-email').value;
@@ -208,8 +199,8 @@
             </script>
 
             {{-- Barra inferior --}}
-            <div class="border-t border-gray-800 text-center py-4 text-xs text-gray-500">
-                &copy; {{ date('Y') }} {{ config('app.name') }}. Todos los derechos reservados.
+            <div class="border-t border-gray-800 text-center py-4 text-xs text-white">
+                &copy; {{ date('Y') }} {{ config('app.name') }}. Todos los derechos reservados. <br> Desarrollado por Aldra.
             </div>
     </footer>
 

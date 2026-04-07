@@ -7,6 +7,7 @@ use App\Models\Socio;
 use App\Models\Noticia;
 use App\Models\Evento;
 use App\Models\Revista;
+use App\Models\Sponsor;
 
 class HomeController extends Controller
 {
@@ -14,6 +15,7 @@ class HomeController extends Controller
     {
         $sliders  = Slider::where('activo', true)->orderBy('orden')->get();
         $socios = Socio::where('activo', true)->get();
+        $sponsors = Sponsor::where('activo', true)->get();
         $revistas = Revista::where('publicar', true)
                            ->orderBy('fecha_edicion', 'desc')
                            ->take(6)
@@ -25,6 +27,6 @@ class HomeController extends Controller
                           ->take(3)
                           ->get();
 
-        return view('home', compact('sliders', 'socios', 'revistas', 'noticias', 'eventos'));
+        return view('home', compact('sliders', 'socios', 'sponsors', 'revistas', 'noticias', 'eventos'));
     }
 }

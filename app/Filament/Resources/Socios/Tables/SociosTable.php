@@ -23,14 +23,16 @@ class SociosTable
                     ->label('Logo')
                     ->disk('public')
                     ->square(),
-                TextColumn::make('descripcion')
-                    ->searchable(),
-                TextColumn::make('dirección')
+                TextColumn::make('direccion')
                     ->searchable(),
                 TextColumn::make('telefono')
                     ->searchable(),
-                TextColumn::make('web')
-                    ->searchable(),
+                TextColumn::make('email')
+                    ->searchable()
+                    ->sortable(),
+                TextColumn::make('link')
+                    ->searchable()
+                    ->label('Web'),
                 TextColumn::make('linkedin')
                     ->searchable(),
                 TextColumn::make('facebook')

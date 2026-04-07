@@ -68,6 +68,17 @@
                                 <span>{{ $socio->telefono }}</span>
                             </div>
                         @endif
+                        
+                        @if ($socio->email)
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+  d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                <span>{{ $socio->email }}</span>
+                            </div>
+                        @endif
 
                         @if ($socio->link)
                             <div class="flex items-center gap-2">

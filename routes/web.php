@@ -39,7 +39,7 @@ Route::get('/socios/{id}', [SocioController::class, 'show'])->name('socios.show'
 Route::get('/galeria', [GaleriaController::class, 'index'])->name('galeria.index');
 
 // Revista
-Route::get('/revista', [RevistaController::class, 'index'])->name('revista.index');
+Route::get('/revistas', [RevistaController::class, 'index'])->name('revistas.index');
 
 // Boletines
 Route::get('/boletines', [BoletinController::class, 'index'])->name('boletines.index');
@@ -69,6 +69,6 @@ Route::post('/login-empresas', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout.empresa');
 
 // Zona exclusiva — protegida con guard empresa
-Route::middleware('auth.empresa')->group(function () {
+Route::middleware('auth:empresa')->group(function () {
     Route::get('/exclusivo', [ExclusivoController::class, 'index'])->name('exclusivo.index');
 });

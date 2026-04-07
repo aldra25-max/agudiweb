@@ -35,14 +35,14 @@ return [
     |
     */
 
-    'guards' => [
+'guards' => [
     'web' => [
         'driver' => 'session',
         'provider' => 'users',
     ],
     'empresa' => [
         'driver' => 'session',
-        'provider' => 'empresas',  // ← provider nuevo
+        'provider' => 'empresas',
     ],
 ],
 
@@ -51,9 +51,9 @@ return [
         'driver' => 'eloquent',
         'model' => App\Models\User::class,
     ],
-    'empresas' => [                          // ← agrega esto
+    'empresas' => [
         'driver' => 'eloquent',
-        'model' => App\Models\Empresa::class,
+        'model' => App\Models\Empresa::class, // ← ¿está exactamente así?
     ],
 ],
 

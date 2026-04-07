@@ -5,10 +5,10 @@
 @section('content')
 
     {{-- HERO --}}
-    <section class="bg-gray-100 py-16">
+    <section class="py-16"style="background: linear-gradient(135deg, #0a1f4d 0%, #17428C 50%, #0e2d6b 100%);">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-4xl font-bold text-gray-800">Publicaciones</h1>
-            <p class="text-gray-500 text-sm mt-2">Documentos, informes y contenido de interés para nuestros asociados.</p>
+            <h1 class="text-4xl font-bold text-white">Publicaciones</h1>
+            <p class="text-gray-300 text-sm mt-2">Documentos, informes y contenido de interés para nuestros asociados.</p>
         </div>
     </section>
 

@@ -15,28 +15,24 @@ class RevistaForm
         return $schema
             ->components([
                 TextInput::make('edicion')
-                    ->label('Edición N°')
+                    ->label('Edicion N')
                     ->numeric()
                     ->required(),
-
                 DatePicker::make('fecha_edicion')
                     ->required(),
-
                 FileUpload::make('imagen')
                     ->label('Imagen de Portada')
                     ->image()
-                    ->disk('public')
+                    ->disk('public_html')
                     ->directory('revistas')
                     ->imagePreviewHeight('150')
                     ->nullable(),
-
                 FileUpload::make('archivo_pdf')
                     ->label('Archivo PDF')
-                    ->disk('public')
+                    ->disk('public_html')
                     ->directory('revistas/pdf')
                     ->acceptedFileTypes(['application/pdf'])
                     ->nullable(),
-
                 Toggle::make('publicar')
                     ->default(true),
             ]);

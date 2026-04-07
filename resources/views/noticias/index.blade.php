@@ -5,7 +5,7 @@
 @section('content')
 
 {{-- ENCABEZADO --}}
-<section class="bg-gray-50 py-14">
+<section class="py-16"style="background: linear-gradient(135deg, #0a1f4d 0%, #17428C 50%, #0e2d6b 100%);">
     <div class="max-w-7xl mx-auto px-4">
         <h1 class="text-4xl font-bold mb-2">Noticias</h1>
         <p class="text-gray-500">Últimas novedades y artículos de la industria.</p>

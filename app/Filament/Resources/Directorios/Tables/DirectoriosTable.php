@@ -16,19 +16,17 @@ class DirectoriosTable
     {
         return $table
             ->columns([
+                TextColumn::make('orden')
+                    ->sortable(),
                 ImageColumn::make('foto')
                     ->label('Foto')
                     ->circular(),
-
                 TextColumn::make('nombre')
                     ->searchable()
                     ->sortable(),
-
                 TextColumn::make('empresa')
                     ->searchable(),
-
                 TextColumn::make('cargo'),
-
                 IconColumn::make('activo')
                     ->boolean()
                     ->label('Activo'),

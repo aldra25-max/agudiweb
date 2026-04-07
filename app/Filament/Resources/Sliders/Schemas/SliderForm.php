@@ -16,22 +16,19 @@ class SliderForm
                 TextInput::make('titulo')
                     ->required()
                     ->maxLength(255),
-
                 FileUpload::make('imagen')
                     ->image()
-                    ->disk('public')
+                    ->disk('public_html')
+                    ->visibility('public')
                     ->directory('sliders')
                     ->imagePreviewHeight('150')
                     ->nullable(),
-
                 TextInput::make('link')
                     ->maxLength(255)
                     ->nullable(),
-
                 TextInput::make('orden')
                     ->numeric()
                     ->default(0),
-
                 Toggle::make('activo')
                     ->default(true),
             ]);

@@ -59,6 +59,13 @@ return [
             'throw' => false,
             'report' => false,
         ],
+        
+        'public_html' => [
+    'driver' => 'local',
+    'root' => '/home/agudiper/public_html/storage',
+    'url' => env('APP_URL') . '/storage',
+    'visibility' => 'public',
+],
 
     ],
 

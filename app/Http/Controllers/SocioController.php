@@ -10,7 +10,7 @@ class SocioController extends Controller
     {
         $socios = Socio::where('activo', true)
             ->orderBy('empresa')
-            ->paginate(12);
+            ->paginate(20);
 
         return view('socios.index', compact('socios'));
     }
